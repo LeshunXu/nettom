@@ -42,14 +42,16 @@ in2outTo <- tailor(subbox, OxfordODre, od="to", "outside")
 fromIDs <- getFromToID(in2outFrom, "from")
 toIDs <- getFromToID(in2outTo, "to")
 in2outNodes <- getboundaryNodes(cntrnet, subbox, OxfordODre, fromIDs, toIDs, "in2out")
-in2outDemands <- mergeDemands(in2outNodes[,3:5], "in2out")
+in2outDemands <- mergeDemands(in2outNodes[,c("in2out_lon", "in2out_lat", "demand")], "in2out")
+head(in2outDemands)
 
 out2inFrom <- tailor(subbox, OxfordODre, od="from", "outside")
 out2inTo <- tailor(subbox, OxfordODre, od="to")
 fromIDs <- getFromToID(out2inFrom, "from")
 toIDs <- getFromToID(out2inTo, "to")
 out2inNodes <- getboundaryNodes(cntrnet, subbox, OxfordODre, fromIDs, toIDs, "out2in")
-out2inDemands <- mergeDemands(out2inNodes[,3:5], "out2in")
+out2inDemands <- mergeDemands(out2inNodes[,c("out2in_lon", "out2in_lat", "demand")], "out2in")
+head(out2inDemands)
 
 }
 \keyword{mergeDemands}

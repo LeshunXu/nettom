@@ -18,8 +18,8 @@ and a data frame with main nodes.
 }
 \description{
 This function adds node IDs to the OD data by using the
-"match_points_to_graph" function and referring to a given network with
-node IDs.
+"match_points_to_graph" function (in the "dodgr" package) and referring to a
+given network with node IDs.
 }
 \examples{
 wholenet <- getnet("oxford uk")
@@ -29,6 +29,8 @@ cntrnet <- contract(mainnet)
 ODlist <- getODnodes(cntrnet, oxford.od)
 oxford.od.nodes <- ODlist[[1]]
 oxford.main.nodes <- ODlist[[2]]
+head(oxford.od.nodes)
+head(oxford.main.nodes)
 
 }
 \keyword{getODnodes}

@@ -29,9 +29,7 @@
 #'
 #' @export
 
-
-
-addSegments <- function(routes, col, lwd, showEnds = TRUE){
+addSegments <- function(routes, col, lwd = 1, showEnds = TRUE){
   with(
     routes,
     segments(from_lon, from_lat, to_lon, to_lat, col = col, lwd = lwd)

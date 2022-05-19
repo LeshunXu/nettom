@@ -1,13 +1,13 @@
 #' Link to Node IDs
 #'
-#' This function links the "from_id" and "to_id" to node IDs for the given two
+#' This function links the "from_id" and "to_id" to node IDs based on the given two
 #' data frames.
 #'
 #' @param mainnodes A data frame with main node IDs.
 #' @param network A network with "from_id" and "to_id." In general, it is a
 #' ontracted network.
 #'
-#' @return The out put is a data frame with added node IDs.
+#' @return The out put is a network data frame with added node IDs.
 #'
 #' @keywords links
 #'
@@ -19,6 +19,7 @@
 #' ODlist <- getODnodes(cntrnet, oxford.od)
 #' oxford.main.nodes <- ODlist[[2]]
 #' oxford.links.df <- links(oxford.main.nodes, cntrnet)
+#' head(oxford.links.df)
 #'
 #' @export
 

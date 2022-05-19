@@ -22,7 +22,6 @@
 #' @export
 
 contract <- function(network){
-  require("dodgr")
   contracted <- dodgr_contract_graph(network)
   contracted <- contracted[contracted$component==1, ]
   return(contracted)

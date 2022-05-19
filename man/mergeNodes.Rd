@@ -19,7 +19,7 @@ merged-centres (tailorNR), and the merged network without shorter-routes
 (merged).
 }
 \description{
-This function merges some close nodes into a single node.
+This function merges some close nodes into one single node.
 }
 \examples{
 location <- c(osmdata::getbb("oxford uk"))
@@ -27,11 +27,12 @@ wholenet <- getnet("oxford uk")
 mainnet <- mainnet(wholenet)
 cntrnet <- contract(mainnet)
 shownetwork(vec2bbox(location), wholenet, cntrnet)
-listAll <- mergeNodes(cntrnet, threshold = 0.98)
-with(listAll[[1]], segments(from_lon, from_lat, to_lon, to_lat, col = "green"))
-with(listAll[[4]], segments(from_lon, from_lat, to_lon, to_lat, col = "red"))
 addbox(location, "blue")
-mergedNet <- listAll[[4]]
+listAll <- mergeNodes(cntrnet, threshold = 0.98)
+shorters <- listAll$shorters
+merged <- listAll$merged
+with(shorters, segments(from_lon, from_lat, to_lon, to_lat, col = "green"))
+with(merged, segments(from_lon, from_lat, to_lon, to_lat, col = "red"))
 
 }
 \keyword{mergeNodes}

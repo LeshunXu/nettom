@@ -21,10 +21,10 @@ This function extracts the main network from a given network based on the
 provided road types.
 }
 \examples{
-location <- c(osmdata::getbb("oxford uk"))
+bbox <- osmdata::getbb("oxford uk")
 wholenet <- getnet("oxford uk")
 mainnet <- mainnet(wholenet)
-shownetwork(vec2bbox(location), wholenet, mainnet)
+shownetwork(bbox, wholenet, mainnet)
 
 }
 \keyword{mainnet}

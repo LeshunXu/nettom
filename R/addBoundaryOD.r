@@ -37,14 +37,19 @@
 #' in2outNodes <- getboundaryNodes(cntrnet, subbox, OxfordODre,
 #'                                 fromIDs, toIDs, "in2out")
 #'
+#' out2inFrom <- tailor(subbox, OxfordODre, od="from", "outside")
+#' out2inTo <- tailor(subbox, OxfordODre, od="to")
+#'
 #' fromIDs <- getFromToID(out2inFrom, "from")
 #' toIDs <- getFromToID(out2inTo, "to")
 #' out2inNodes <- getboundaryNodes(cntrnet, subbox, OxfordODre,
 #'                                 fromIDs, toIDs, "out2in")
 #'
 #' newODdata <- addBoundaryOD(OxfordODre, in2outNodes, out2inNodes)
+#' head(newODdata)
 #'
 #' @export
+
 addBoundaryOD <- function(ODrefined, in2outNodes, out2inNodes){
   allIDS <- c(ODrefined$from_id, ODrefined$to_id)
   maxOldID <- max(as.numeric(unique(allIDS)))

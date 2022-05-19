@@ -24,8 +24,8 @@ crossedPoint(a1, b1, c1, d1, a2, b2, c2, d2)
 \item{d2}{The y-coordinate of the second point in segment-2.}
 }
 \value{
-The output is the coordinates of the crossed-point. "NULL" will be
-returned if the segments are parallel.
+The output is the coordinates of the crossed-point. It will be "NULL"
+if the segments are parallel.
 }
 \description{
 This function gets the coordinates of the crossed-point of two segments.

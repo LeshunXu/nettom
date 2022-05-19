@@ -17,6 +17,7 @@ This function generates the OD data for a given location.
 }
 \examples{
 oxford.od <- ODdata("oxford uk")
+head(oxford.od)
 
 }
 \keyword{ODdata}

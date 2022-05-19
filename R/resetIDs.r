@@ -24,6 +24,7 @@
 #' odlist2 <- od2network(OxfordOD, oxford.od.nodes, cntrnet)
 #' OxfordODre <- odlist2[[1]]
 #' newODdata <- resetIDs(OxfordODre)
+#' head(newODdata)
 #'
 #' @export
 

@@ -51,8 +51,6 @@ shownetwork <- function(bbox, network, contracted = NULL,
     stop("The range/bbox of the coordinates is not suitable.")
   }
   plot(0, 0, main = tittle,
-       # xlim = xrange + c(-0.01, 0.01),
-       # ylim = yrange + c(-0.01, 0.01),
        xlim = xrange + diff(xrange) * extended * c(-1,1),
        ylim = yrange + diff(yrange) * extended * c(-1,1),
        pch=19, col=2,

@@ -16,6 +16,7 @@
 #' addbox(c(bbox), col = "blue")
 #'
 #' @export
+
 addbox <- function(location, col = NULL){
   if(is.null(col)){
     col <-  "black"

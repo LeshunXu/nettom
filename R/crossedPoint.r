@@ -11,8 +11,8 @@
 #' @param c2 The x-coordinate of the second point in segment-2.
 #' @param d2 The y-coordinate of the second point in segment-2.
 #'
-#' @return The output is the coordinates of the crossed-point. "NULL" will be
-#' returned if the segments are parallel.
+#' @return The output is the coordinates of the crossed-point. It will be "NULL"
+#' if the segments are parallel.
 #'
 #' @keywords crossedPoint
 #'

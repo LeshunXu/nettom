@@ -37,5 +37,8 @@ odlist2 <- od2network(OxfordOD, oxford.od.nodes, cntrnet)
 OxfordODre <- odlist2[[1]]
 outNet <- odlist2[[2]]
 
+head(OxfordODre)
+head(outNet)
+
 }
 \keyword{od2network}

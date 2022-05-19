@@ -34,7 +34,7 @@ toID <- cntrnet[sample(1:nrow(cntrnet), 1), "to_id"]
 ShortPath <- getSortestPath(cntrnet, fromID = fromID, toID = toID)
 
 shownetwork(vec2bbox(location), wholenet, cntrnet)
-addSegments(shortPath, "red", lwd = 2, showEnds = TRUE)
+addSegments(ShortPath, "red", lwd = 2, showEnds = TRUE)
 
 }
 \keyword{getSortestPath}

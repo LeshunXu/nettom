@@ -13,10 +13,10 @@
 #' @keywords mainnet
 #'
 #' @examples
-#' location <- c(osmdata::getbb("oxford uk"))
+#' bbox <- osmdata::getbb("oxford uk")
 #' wholenet <- getnet("oxford uk")
 #' mainnet <- mainnet(wholenet)
-#' shownetwork(vec2bbox(location), wholenet, mainnet)
+#' shownetwork(bbox, wholenet, mainnet)
 #'
 #' @export
 

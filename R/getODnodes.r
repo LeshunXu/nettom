@@ -1,8 +1,8 @@
 #' Set Node IDs for OD Data
 #'
 #' This function adds node IDs to the OD data by using the
-#' "match_points_to_graph" function and referring to a given network with
-#' node IDs.
+#' "match_points_to_graph" function (in the "dodgr" package) and referring to a
+#' given network with node IDs.
 #'
 #' @param network The referred network with node IDs. In general, it is a
 #' contracted network.
@@ -21,8 +21,11 @@
 #' ODlist <- getODnodes(cntrnet, oxford.od)
 #' oxford.od.nodes <- ODlist[[1]]
 #' oxford.main.nodes <- ODlist[[2]]
+#' head(oxford.od.nodes)
+#' head(oxford.main.nodes)
 #'
 #' @import dodgr
+#'
 #' @export
 
 getODnodes <- function(network, ODdata){

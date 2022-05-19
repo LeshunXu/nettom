@@ -18,6 +18,7 @@
 #' oxford.main.nodes <- ODlist[[2]]
 #' oxford.od <- addODnodeID(oxford.main.nodes, oxford.od)
 #' oxford.od.matrix <- ODwithdemand(oxford.od)
+#' head(oxford.od.matrix)
 #'
 #' @export
 

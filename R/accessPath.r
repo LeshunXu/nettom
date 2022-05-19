@@ -4,17 +4,21 @@
 #' detecting the shortest path between two nodes.
 #'
 #' @param wholenet Reference network with node IDs and lon-lat coordinates.
-#' @param subbox Sub-region of the reference network.
+#' @param subbox Sub-region of the reference network. The case subbox = "NA" is prepared
+#' for the shortest path.
 #' @param more If TRUE, will return more info including the distance "d", the weighted
 #' distance "d_weighted", the "time", and the weighted time "time_weighted".
 #' @param fromID The starting node ID as expected.
-#' @param toID The end node ID as expected.
-#' @param status Providing the shortest path only or not.
+#' @param toID The ending node ID as expected.
+#' @param status Two possible status for this function. If status = NULL, as the
+#' default, a full list will be returned. If status = "ShortPath", only the
+#' shortest path will be returned.
 #'
 #' @return The output is a list of a new network with the created nodes
 #' "addedNet", a boundary-crossed segment "crossSeg", and a segemnt with the
-#' added new node "newCrossSeg". It includes the shortest path "shortPath" and
-#' the coordinates of the created boundary nodes "xyFrame".
+#' added new node "newCrossSeg". It also includes the shortest path "shortPath" and
+#' the coordinates of the created boundary nodes "xyFrame". If the status is
+#' "ShortPath", only the thortest path will be returned.
 #'
 #' @keywords accessPath
 #'
@@ -53,14 +57,14 @@
 #'   xyFrame,
 #'   points(x, y, pch = 4, col= "green")
 #' )
-#' addSegments(newCrossSeg, "green", showEnds = TRUE)
+#' addSegments(newCrossSeg, "yellow", showEnds = FALSE)
 #'
 #' @import igraph
 #'
 #' @export
+
 accessPath <- function(wholenet, subbox = "NA", more = FALSE,
                        fromID = NULL, toID = NULL, status = NULL){
-  require("igraph")
   if(is.null(status)){
     subRegion <- tailor(subbox, wholenet)
     crossPart <- NULL

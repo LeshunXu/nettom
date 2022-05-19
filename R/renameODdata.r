@@ -20,6 +20,7 @@
 #' oxford.od <- addODnodeID(oxford.main.nodes, oxford.od)
 #' oxford.od.matrix <- ODwithdemand(oxford.od)
 #' OxfordOD <- renameODdata(oxford.od.matrix)
+#' head(OxfordOD)
 #'
 #' @export
 

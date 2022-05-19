@@ -6,7 +6,7 @@
 #' @param subbox A sub-region of the reference network.
 #' @param infoData The reference data frame.
 #' @param fromIDs The starting node IDs of routes.
-#' @param toIDs The ending node IDs of routes..
+#' @param toIDs The ending node IDs of routes.
 #' @param status Specified situation on "going-inside" (out2in) or "going
 #' outside" (in2out).
 #'
@@ -39,10 +39,18 @@
 #' in2outNodes <- getboundaryNodes(cntrnet, subbox, OxfordODre,
 #'                                 fromIDs, toIDs, "in2out")
 #'
+#' shownetwork(osmdata::getbb("oxford uk"), wholenet, cntrnet)
+#' addbox(regn, "blue")
+#' with(
+#'   in2outNodes,
+#'   points(in2out_lon, in2out_lat, pch = 4, col= "green")
+#' )
+#'
+#' @import igraph
+#'
 #' @export
 
 getboundaryNodes <- function(wholenet, subbox, infoData, fromIDs, toIDs, status){
-  require("igraph")
   if(status=="in2out"){
     boundaryNodes <- data.frame(from_id = character(), to_id = character(),
                                 in2out_lon = double(), in2out_lat = double(),

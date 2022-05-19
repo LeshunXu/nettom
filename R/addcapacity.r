@@ -5,10 +5,10 @@
 #' @param linksdata A network with the "highway" column factorized by "trunk",
 #' "primary", "secondary", "tertiary", "trunk_link", "primary_link",
 #' "secondary_link" and "tertiary_link".
-#' @param specify Prepared for further development on specified numerical
+#' @param specified Prepared for further development on specified numerical
 #' capacities.
 #'
-#' @return The output is a data frame with the added capacities.
+#' @return The output is a network data frame with the added capacities.
 #'
 #' @keywords addcapacity
 #'
@@ -22,10 +22,11 @@
 #' oxford.main.nodes <- ODlist[[2]]
 #' oxford.links.df <- links(oxford.main.nodes, cntrnet)
 #' OxfordLinks <- addcapacity(oxford.links.df)
+#' head(OxfordLinks)
 #'
 #' @export
 
-addcapacity <- function(linksdata, specify = NULL){
+addcapacity <- function(linksdata, specified = NULL){
   linkID <- 1:nrow(linksdata)
   linksdata$linkID <- linkID
   capacity <- numeric(nrow(linksdata))

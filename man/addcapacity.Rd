@@ -4,18 +4,18 @@
 \alias{addcapacity}
 \title{Add Capacities to a Network}
 \usage{
-addcapacity(linksdata, specify = NULL)
+addcapacity(linksdata, specified = NULL)
 }
 \arguments{
 \item{linksdata}{A network with the "highway" column factorized by "trunk",
 "primary", "secondary", "tertiary", "trunk_link", "primary_link",
 "secondary_link" and "tertiary_link".}
 
-\item{specify}{Prepared for further development on specified numerical
+\item{specified}{Prepared for further development on specified numerical
 capacities.}
 }
 \value{
-The output is a data frame with the added capacities.
+The output is a network data frame with the added capacities.
 }
 \description{
 This function adds numerical capacities to the network data frame.
@@ -30,6 +30,7 @@ ODlist <- getODnodes(cntrnet, oxford.od)
 oxford.main.nodes <- ODlist[[2]]
 oxford.links.df <- links(oxford.main.nodes, cntrnet)
 OxfordLinks <- addcapacity(oxford.links.df)
+head(OxfordLinks)
 
 }
 \keyword{addcapacity}

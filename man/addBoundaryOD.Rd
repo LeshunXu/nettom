@@ -46,12 +46,16 @@ toIDs <- getFromToID(in2outTo, "to")
 in2outNodes <- getboundaryNodes(cntrnet, subbox, OxfordODre,
                                 fromIDs, toIDs, "in2out")
 
+out2inFrom <- tailor(subbox, OxfordODre, od="from", "outside")
+out2inTo <- tailor(subbox, OxfordODre, od="to")
+
 fromIDs <- getFromToID(out2inFrom, "from")
 toIDs <- getFromToID(out2inTo, "to")
 out2inNodes <- getboundaryNodes(cntrnet, subbox, OxfordODre,
                                 fromIDs, toIDs, "out2in")
 
 newODdata <- addBoundaryOD(OxfordODre, in2outNodes, out2inNodes)
+head(newODdata)
 
 }
 \keyword{addBoundaryOD}

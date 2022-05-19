@@ -16,7 +16,7 @@ getnet(location, wt_for = "motorcar")
 The output is the network with the specified profile.
 }
 \description{
-This function generates a network according to a given location.
+This function generates a network according to the given location.
 }
 \examples{
 oxford <- getnet("oxford uk")

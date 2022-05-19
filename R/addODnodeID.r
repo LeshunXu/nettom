@@ -23,6 +23,8 @@
 #' oxford.main.nodes <- ODlist[[2]]
 #' oxford.od <- addODnodeID(oxford.main.nodes, oxford.od)
 #'
+#' c("from_nodeID", "to_nodeID") %in% names(oxford.od)
+#'
 #' @export
 
 addODnodeID <- function(mainnodes, ODdata){

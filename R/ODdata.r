@@ -10,6 +10,7 @@
 #'
 #' @examples
 #' oxford.od <- ODdata("oxford uk")
+#' head(oxford.od)
 #'
 #' @import pct
 #' @import sf
@@ -18,7 +19,9 @@
 #' @export
 
 ODdata <- function(location){
-  require("pct", "sf", "stplanr")
+  require("pct")
+  require("sf")
+  require("stplanr")
   location <- gsub("(\\w+).*", "\\1", location)
   oxford.desire.lines <- get_desire_lines(location)
   oxford.desire.lines <- st_transform(oxford.desire.lines,

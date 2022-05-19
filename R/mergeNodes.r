@@ -1,6 +1,6 @@
 #' Merge Neighbour Nodes
 #'
-#' This function merges some close nodes into a single node.
+#' This function merges some close nodes into one single node.
 #'
 #' @param network A network with nodes and their distances.
 #' @param threshold If NULL, will merge nodes based on the mean of the distances.
@@ -19,11 +19,12 @@
 #' mainnet <- mainnet(wholenet)
 #' cntrnet <- contract(mainnet)
 #' shownetwork(vec2bbox(location), wholenet, cntrnet)
-#' listAll <- mergeNodes(cntrnet, threshold = 0.98)
-#' with(listAll[[1]], segments(from_lon, from_lat, to_lon, to_lat, col = "green"))
-#' with(listAll[[4]], segments(from_lon, from_lat, to_lon, to_lat, col = "red"))
 #' addbox(location, "blue")
-#' mergedNet <- listAll[[4]]
+#' listAll <- mergeNodes(cntrnet, threshold = 0.98)
+#' shorters <- listAll$shorters
+#' merged <- listAll$merged
+#' with(shorters, segments(from_lon, from_lat, to_lon, to_lat, col = "green"))
+#' with(merged, segments(from_lon, from_lat, to_lon, to_lat, col = "red"))
 #'
 #' @export
 
@@ -113,5 +114,6 @@ mergeNodes <- function(network, threshold = NULL){
     merged <- tailorNR
   }
 
-  return(list(shorters, NOshorters, tailorNR, merged))
+  return(list(shorters = shorters, NOshorters = NOshorters,
+              tailorNR = tailorNR, merged = merged))
 }

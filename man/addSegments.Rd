@@ -4,7 +4,7 @@
 \alias{addSegments}
 \title{Show Segments}
 \usage{
-addSegments(routes, col, lwd, showEnds = TRUE)
+addSegments(routes, col, lwd = 1, showEnds = TRUE)
 }
 \arguments{
 \item{routes}{Segments with lon-lat coordinates.}

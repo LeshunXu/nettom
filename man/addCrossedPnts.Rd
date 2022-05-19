@@ -32,8 +32,11 @@ y1 <- mean(c(crossSeg$from_lat, crossSeg$to_lat))
 x2 <- max(c(crossSeg$from_lon, crossSeg$to_lon)) + abs(x1)
 y2 <- max(c(crossSeg$from_lat, crossSeg$to_lat)) + abs(y1)
 regn <- c(x1, y1, x2, y2)
-addCrossedPnts(crossSeg, regn, more = TRUE)
-addCrossedPnts(crossSeg, regn, more = FALSE)
+addCrossedPnts(crossSeg, regn, more = TRUE)$
+  crossedAdded[, c("d", "d_weighted", "time", "time_weighted")]
+addCrossedPnts(crossSeg, regn, more = FALSE)$
+  crossedAdded[, c("d", "d_weighted", "time", "time_weighted")]
+addCrossedPnts(crossSeg, regn, more = TRUE)$xyFrame
 
 }
 \keyword{addCrossedPnts}

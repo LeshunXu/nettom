@@ -1,6 +1,6 @@
 #' Generate a Network
 #'
-#' This function generates a network according to a given location.
+#' This function generates a network according to the given location.
 #'
 #' @param location The location of a preferred network.
 #' @param wt_for The specified profile for the network. The default setting is
@@ -23,7 +23,6 @@
 #' @export
 
 getnet <- function(location, wt_for = "motorcar"){
-  require("dodgr", "osmdata")
   # Checking and unifying the input "location"
   if(is.vector(location) & is.numeric(location)){
     if(length(location)!=4 | location[3]<=location[1] | location[4]<=location[2]){

@@ -13,7 +13,8 @@
 #' @examples
 #' regn <- c(-1.20, 51.71, -1.19, 51.72)
 #' network <- getnet(regn)
-#' IDs <- getFromToID(network, "from")
+#' fromIDs <- getFromToID(network, "from")
+#' head(fromIDs)
 #'
 #' @export
 

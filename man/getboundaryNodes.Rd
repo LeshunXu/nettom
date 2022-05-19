@@ -15,7 +15,7 @@ getboundaryNodes(wholenet, subbox, infoData, fromIDs, toIDs, status)
 
 \item{fromIDs}{The starting node IDs of routes.}
 
-\item{toIDs}{The ending node IDs of routes..}
+\item{toIDs}{The ending node IDs of routes.}
 
 \item{status}{Specified situation on "going-inside" (out2in) or "going
 outside" (in2out).}
@@ -50,6 +50,13 @@ fromIDs <- getFromToID(in2outFrom, "from")
 toIDs <- getFromToID(in2outTo, "to")
 in2outNodes <- getboundaryNodes(cntrnet, subbox, OxfordODre,
                                 fromIDs, toIDs, "in2out")
+
+shownetwork(osmdata::getbb("oxford uk"), wholenet, cntrnet)
+addbox(regn, "blue")
+with(
+  in2outNodes,
+  points(in2out_lon, in2out_lat, pch = 4, col= "green")
+)
 
 }
 \keyword{getboundaryNodes}

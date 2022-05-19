@@ -13,10 +13,10 @@ links(mainnodes, network)
 ontracted network.}
 }
 \value{
-The out put is a data frame with added node IDs.
+The out put is a network data frame with added node IDs.
 }
 \description{
-This function links the "from_id" and "to_id" to node IDs for the given two
+This function links the "from_id" and "to_id" to node IDs based on the given two
 data frames.
 }
 \examples{
@@ -27,6 +27,7 @@ cntrnet <- contract(mainnet)
 ODlist <- getODnodes(cntrnet, oxford.od)
 oxford.main.nodes <- ODlist[[2]]
 oxford.links.df <- links(oxford.main.nodes, cntrnet)
+head(oxford.links.df)
 
 }
 \keyword{links}
